@@ -25,6 +25,7 @@
     --color-texto: #E6FAFC;
     --color-secundario: #BE1622;
     --color-terciario: #D9D9D9;
+    --color-cuarteto: #7E6B8F;
 }
 
 /* Reset de estilos */
@@ -45,6 +46,21 @@ body {
 
 html {
     scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 1px var(--color-texto);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--color-secundario);
+    border-radius: 10px;
 }
 
 ::selection {
@@ -95,27 +111,38 @@ button {
 .button_top {
     display: block;
     box-sizing: border-box;
-    border: 2px solid var(--button_outline_color);
+    border: 2px solid var(--color-fondo2);
     border-radius: var(--button_radius);
     padding: 0.75em 1.5em;
-    background: var(--button_color);
-    color: var(--button_outline_color);
+    background: var(--color-texto);
+    color: var(--color-fondo2);
     transform: translateY(-0.2em);
     transition: transform 0.1s ease;
 }
   
 button:hover .button_top {
-    /* Pull the button upwards when hovered */
     transform: translateY(-0.33em);
 }
   
 button:active .button_top {
-    /* Push the button downwards when pressed */
     transform: translateY(0);
 }
 
 .dash{
     color: var(--color-secundario);
+}
+
+.up-page{
+    width: 25px;
+    margin: 1rem;
+    margin-bottom: 1.8rem;
+    padding: 0.5rem;
+    background: var(--color-secundario);
+    border-radius: 10px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    display: none;
 }
 
 /* Background */
@@ -198,6 +225,7 @@ button:active .button_top {
 .Header-ul {
     display: flex;
     justify-content: flex-end;
+    align-items: center;
 }
 
 .Header-li {
@@ -363,8 +391,40 @@ button:active .button_top {
 
 .Main {
     width: 100%;
-    margin-top: 7.5rem;
+    margin-bottom: 7.5rem;
     text-align: center;
+}
+
+.Section-marquee{
+    padding-bottom: 7.5rem;
+}
+
+.Marquee-group{
+    display: flex;
+    justify-content: flex-start;
+    background: var(--color-texto);
+    overflow: hidden;
+    padding: 1rem;
+    z-index: 100;
+}
+
+.Marquee-group h2{
+    margin: 0 !important;
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--color-fondo);
+    white-space: nowrap;
+    padding: 0 2.5rem;
+    animation: move-rtl 15000ms linear infinite;
+}
+
+@keyframes move-rtl {
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
 }
 
 .Main h2 {
@@ -373,7 +433,7 @@ button:active .button_top {
 }
 
 .Main .About-me {
-    padding: 3.5em;
+    padding: 3em;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -391,6 +451,10 @@ button:active .button_top {
 .Main .About-me .Info-me p {
     margin: 1rem;
     text-align: left;
+}
+
+.Main .About-me .Info-me .Fomr-button{
+    margin-top: 5em;
 }
 
 .Main .About-me .Selfie-me {
@@ -536,6 +600,10 @@ button:active .button_top {
     text-align: center;
     padding: 1rem;
     background-color: var(--color-fondo2);
+}
+
+.Footer-div{
+    background: var(--color-cuarteto);
 }
 
 .Footer p{
@@ -726,6 +794,9 @@ button:active .button_top {
 }
 
 @media screen and (max-width: 590px) {
+    .Header{
+        margin: 1rem;
+    }
     .Proyect .Info-proyect {
         margin: 0;
         margin-top: 1.5rem;
@@ -756,9 +827,6 @@ button:active .button_top {
         padding: 0;
         display: flex;
         justify-content: space-around;
-    }
-    .Header-li{
-        padding: 0.2rem;
     }
     .Main h2 {
         font-size: 38px;
