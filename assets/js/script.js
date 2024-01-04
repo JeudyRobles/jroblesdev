@@ -20,3 +20,12 @@ function cambiarGIF() {
         img.src = gifActual;
     }
 }
+
+//Boton ir arriba aparezca cuando haga scroll
+window.onscroll = function() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 100) {
+      document.querySelector('.up-page').style.display = 'block';
+    } else {
+      document.querySelector('.up-page').style.display = 'none';
+    }
+};
