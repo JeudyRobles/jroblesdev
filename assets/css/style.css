@@ -96,6 +96,10 @@ li {
     list-style: none;
 }
 
+input{
+    font-family: "Neue Montreal Medium";
+}
+
 button {
     --button_radius: 0.75em;
     --button_color: #e8e8e8;
@@ -106,6 +110,7 @@ button {
     border-radius: var(--button_radius);
     background: var(--button_outline_color);
     width: 150px;
+    margin-top: 3em;
 }
 
 .button_top {
@@ -113,7 +118,7 @@ button {
     box-sizing: border-box;
     border: 2px solid var(--color-fondo2);
     border-radius: var(--button_radius);
-    padding: 0.75em 1.5em;
+    padding: 0.75em 2.9em;
     background: var(--color-texto);
     color: var(--color-fondo2);
     transform: translateY(-0.2em);
@@ -143,6 +148,11 @@ button:active .button_top {
     bottom: 0;
     right: 0;
     display: none;
+    transition: all 0.5s;
+}
+
+.up-page:hover{
+    background: var(--color-cuarteto);
 }
 
 /* Background */
@@ -453,8 +463,20 @@ button:active .button_top {
     text-align: left;
 }
 
-.Main .About-me .Info-me .Fomr-button{
+.Main .About-me .Info-me .Form-button{
     margin-top: 5em;
+    
+}
+
+.Form-button{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.Form-button input{
+    margin-top: 1rem;
+    border-radius: 10px;
 }
 
 .Main .About-me .Selfie-me {
@@ -560,14 +582,15 @@ button:active .button_top {
     display: flex;
     justify-content: space-around;
     align-items: center;
+
 }
 
 .Contact .Form .Form-container{
     text-align: center;
-    padding: 3rem;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 100%;
     border-radius: 20px;
     background: linear-gradient(145deg, #1e1f23, #23242a);
     box-shadow:  5px 5px 2px #0d0e10,-5px -5px 2px #35363e;
@@ -575,7 +598,7 @@ button:active .button_top {
 
 .Contact .Form .Form-container .Form-input{
     margin: 1rem;
-    padding: 1.5rem;
+    padding: 1.5rem 0 1.5rem 1em;
     border-radius: 20px;
     border: 2px;
     border-color: var(--color-fondo);
@@ -771,6 +794,10 @@ button:active .button_top {
     .Container-gif #image-cat{
         width: 250px;
     }
+    .Contact .Form .Form-container .Form-input{
+        padding: 1em;
+        margin: 0.5em;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -813,6 +840,9 @@ button:active .button_top {
     }
     .Contact{
         padding: 2rem;
+    }
+    .Contact .Form .Form-container{
+        padding: 0;
     }
 }
 

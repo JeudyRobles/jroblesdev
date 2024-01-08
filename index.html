@@ -195,7 +195,7 @@
             <div class="Proyect">
                 <div class="Img-proyect">
                     <div class="Align-img"> <!-- Alinea la imagen de adentro, sin alterar la misma -->
-                        <a href="https://docafetarrazu.com/" target="_blank">
+                        <a href="#" target="_blank">
                             <img src="./assets/img/My portfolio.png" alt="">
                         </a>
                     </div>
@@ -221,7 +221,7 @@
             <div class="Proyect">
                 <div class="Img-proyect">
                     <div class="Align-img"> <!-- Alinea la imagen de adentro, sin alterar la misma -->
-                        <a href="">
+                        <a href="#">
                             <img src="./assets/img/MTB Los Santos.png" alt="">
                         </a>
                     </div>
@@ -251,25 +251,27 @@
         </div>
         <!-- Contact -->
         <div class="Contact">
-            <form id="Contact" class="Form">
+            <div id="Contact" class="Form">
                 <div class="Container-gif">
                     <h2 class="Form-h2"> <span class="dash">| </span>Let's work together.</h2>
                     <img src="./assets/img/cat.gif" id="image-cat" onclick="cambiarGIF()" />
                 </div>
 
-                <div class="Form-container">
-                    <h3 class="Form-h2">Send a message and say Hi! 👋</h3>
-                    <input type="text" class="Form-input Form-input-name" placeholder="Name:">
-                    <input type="email" class="Form-input Form-input-email" placeholder="Email:">
-                    <textarea class="Form-input Form-input-message" placeholder="Message:"></textarea>
+                <form id="form">
 
-                    <div class="Fomr-button">
-                        <button>
-                            <span class="button_top">Submit</span>
-                        </button>
+                    <div class="Form-container">
+                        <h3 class="Form-h2">Send a message and say Hi! 👋</h3>
+                        <input type="text" name="from_name" id="from_name" class="Form-input Form-input-name" placeholder="Name">
+                        <input type="text" name="email_id" id="email_id"  class="Form-input Form-input-email" placeholder="Email">
+                        <input type="text" name="message" id="message" class="Form-input Form-input-message"placeholder="Message">
+                        
+                        <div class="Form-button">
+                            <input type="submit" id="button" value="Send Email" class="button_top">
+                        </div>
                     </div>
-                </div>
-            </form>
+                </form>
+
+            </div>
         </div>
     </main>
     <!-- Footer -->
@@ -289,5 +291,10 @@
     <!-- Script Animate js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <!-- Script Emailjs -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        emailjs.init('0uh6qFNSsQ0D7Krx2')
+    </script>
 </body>
 </html>
