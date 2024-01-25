@@ -214,6 +214,15 @@ button:active .button_top {
     justify-content: space-between;
 }
 
+.Header-Logo{
+    display: flex;
+}
+
+.Header-Logo .Header-li{
+    padding: 0.5em;
+    margin: 0.5em;
+}
+
 .Header-button {
     all: unset;
     fill: var(--color-texto);
@@ -241,6 +250,10 @@ button:active .button_top {
 .Header-li {
     margin: 0.5em;
     padding: 0.5em;
+}
+
+.language a:active{
+    color: var(--color-secundario);
 }
 
 /* <!-- Banner --> */
@@ -728,7 +741,7 @@ button:active .button_top {
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 931px) {
     h3{
         font-size: 28px;
         margin-bottom: 0.5rem;
@@ -882,7 +895,7 @@ button:active .button_top {
         padding: 0;
     }
     .Contact .Form .Form-container{
-        padding: 1rem;
+        padding: 0.1em;
     }
     .Contact{
         padding: 1rem;
