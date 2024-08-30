@@ -1,25 +1,12 @@
-/* Cuando hago CLICK .Header-button, .Header-nav TOGGLE 'isActive' */
-var button = document.querySelector('.Header-button');
-var nav = document.querySelector('.Header-nav');
-button.addEventListener('click', function () {
-    nav.classList.toggle('isActive');
-});
-
-// Definir los nombres de los archivos GIF
-var gifActual = "../img/cat.gif";
-var nuevoGIF = "../img/cat-animate.gif";
-
-// Función para cambiar el GIF al hacer clic
-function cambiarGIF() {
-    var img = document.getElementById("image-cat");
-
-    // Verificar qué GIF está actualmente mostrándose y cambiarlo al otro
-    if (img.src.includes(gifActual)) {
-        img.src = nuevoGIF;
-    } else {
-        img.src = gifActual;
-    }
+// Evita que el navegador recuerde la posición de desplazamiento anterior
+if (history.scrollRestoration) {
+  history.scrollRestoration = 'manual';
+} else {
+  window.onbeforeunload = function () {
+      window.scrollTo(0, 0);
+  };
 }
+
 
 //Boton ir arriba aparezca cuando haga scroll
 window.onscroll = function() {
@@ -30,25 +17,70 @@ window.onscroll = function() {
     }
 };
 
-//EMAILJS
+/*Animacion para el menu*/
+window.sr = ScrollReveal();
+sr.reveal('.Header', {
+  duration: 3000,
+  origin: 'bottom',
+  distance: '-100px'
+});
 
-const btn = document.getElementById('button');
+/*Animacion que sale a la derecha de la pantalla*/
 
-document.getElementById('form')
- .addEventListener('submit', function(event) {
-   event.preventDefault();
+window.sr = ScrollReveal();
+sr.reveal('.Text-Banner',{
+  duration: 3500,
+  origin: 'right',
+  distance: '-1000px'
+});
 
-   btn.value = 'Sending...';
+/*Animacion que sale a la del boton de la pantalla para el marquee*/
 
-   const serviceID = 'default_service';
-   const templateID = 'template_amtzllg';
+window.sr = ScrollReveal();
+sr.reveal('.Section-marquee',{
+  duration: 1500,
+  origin: 'bottom',
+  distance: '-10px'
+});
 
-   emailjs.sendForm(serviceID, templateID, this)
-    .then(() => {
-      btn.value = 'Send Email';
-      alert('Sent!');
-    }, (err) => {
-      btn.value = 'Send Email';
-      alert(JSON.stringify(err));
-    });
+/*Animacion que sale como creeper(de la nada) con var*/
+
+var nodeArray = [
+  document.querySelector('#About-me'),
+  document.querySelector('#My-works'),
+  document.querySelector('.Contact'),
+  document.querySelector('.Footer')
+]
+
+window.sr = ScrollReveal();
+sr.reveal(nodeArray,{
+  duration: 3500,
+  origin: 'bottom',
+  distance: '10%'
+});
+
+
+/*Animacion que sale como creeper(de la nada) con var*/
+
+var nodeArray = [
+  document.querySelector('.proyect-container'),
+]
+
+window.sr = ScrollReveal();
+sr.reveal(nodeArray,{
+  duration: 3500,
+  origin: 'right',
+  distance: '5%'
+});
+
+var nodeArray = [
+  document.querySelector('.proyect-container-sr'),
+  document.querySelector('.info-me')
+]
+
+window.sr = ScrollReveal();
+sr.reveal(nodeArray,{
+  duration: 3500,
+  origin: 'left',
+  distance: '5%'
 });

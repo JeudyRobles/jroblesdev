@@ -26,6 +26,7 @@
     --color-secundario: #BE1622;
     --color-terciario: #D9D9D9;
     --color-cuarteto: #7E6B8F;
+    --padding-general: 4rem;
 }
 
 /* Reset de estilos 
@@ -41,11 +42,18 @@ body {
     font-family: "Neue Montreal Medium";
     background-color: var(--color-fondo);
     color: var(--color-texto);
-    cursor: url(../Cursor/Cursor.png), auto;
 }
 
 html {
     scroll-behavior: smooth;
+}
+
+.styled-hr {
+    border: none; 
+    border-top: 2px solid var(--color-terciario); 
+    opacity: 0.3;
+    width: 98%; 
+    box-sizing: border-box; /* Asegura que el ancho incluye bordes y relleno */
 }
 
 ::-webkit-scrollbar {
@@ -82,6 +90,7 @@ h3{
 p {
     font-family: 'Archivo', sans-serif !important;
     font-size: 18px;
+    line-height: 1.5rem;
 }
 
 span{
@@ -172,8 +181,6 @@ button:active .button_top {
     left: -50%;
     right: -50%;
     bottom: -50%;
-    width: 200%;
-    height: 200vh;
     background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
     background-repeat: repeat;
     animation: bg-animation .2s infinite;
@@ -200,16 +207,10 @@ button:active .button_top {
 .Header {
     margin: 3rem;
     margin-top: 1rem;
-    padding: 1em;
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    background: #212227;
-    box-shadow: 20px 20px 60px #0d0e10, -20px -20px 60px #35363e;
-    border-radius: 50px;
-    padding-left: 50px;
-    padding-right: 50px;
     position: fixed;
     top: 0;
     right: 0;
@@ -218,8 +219,15 @@ button:active .button_top {
 }
 
 .Header-nav {
+    width: 50%;
     display: flex;
     justify-content: space-between;
+    padding: 1em;
+    background: #212227;
+    box-shadow: 20px 20px 60px #0d0e10, -20px -20px 60px #35363e;
+    border-radius: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
 }
 
 .Header-Logo{
@@ -229,13 +237,6 @@ button:active .button_top {
 .Header-Logo .Header-li{
     padding: 0.5em;
     margin: 0.5em;
-}
-
-.Header-button {
-    all: unset;
-    fill: var(--color-texto);
-    display: none;
-    cursor: pointer;
 }
 
 .Header-svg {
@@ -268,35 +269,40 @@ button:active .button_top {
 
 .Banner-Bg {
     position: relative;
-    z-index: -1;
-    height: 90vh;
-    width: 100%;
-    overflow: hidden;
+    /* z-index: -1; No se por que lo puse xd*/ 
+    height: 70vh;
+    /* overflow: hidden; */
     background-image: url(../img/icons/San\ José.svg);
+    display: flex;
+    width: 100%;
 }
 
 .Text-Banner {
-    padding: 3.5em;
+    padding: var(--padding-general);
     display: flex;
     align-items: baseline;
     justify-content: center;
     flex-direction: column;
+    flex-wrap: wrap;
     position: absolute;
-    top: 30vh;
+    top: 16vh;
 }
 
 .Text-Banner h1 {
     text-align: start;
     color: var(--color-texto);
     font-size: 120px;
+    margin: 0.5rem;
 }
 
 .Text-Banner h2 {
     font-size: 100px;
+    margin: 0.5rem;
 }
 
 .Text-Banner span {
     font-size: 32px;
+    margin: 0.5rem;
 }
 
 /* <!-- Fondo del banner --> */
@@ -305,7 +311,7 @@ button:active .button_top {
     background: #1F2426;
     background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
     width: 100%;
-    height: 100vh;
+    /* height: 100vh; */
     opacity: 0.7;
 }
 
@@ -427,7 +433,7 @@ button:active .button_top {
 }
 
 .Section-marquee{
-    padding-bottom: 7.5rem;
+    padding-bottom: 1rem;
 }
 
 .Marquee-group{
@@ -460,183 +466,137 @@ button:active .button_top {
 
 .Main h2 {
     font-size: 64px;
-    margin-bottom: 5rem;
 }
 
-.Main .About-me {
-    padding: 3em;
+.about-me {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
-}
-
-.Main .About-me .Info-me {
-    width: 60%;
-    padding: 5rem;
-    margin-right: 10rem;
-    border-radius: 50px;
-    background: #212227;
-    box-shadow: 33px 33px 1px #0d0e10, -33px -33px 1px #35363e;
-}
-
-.Main .About-me .Info-me p {
-    margin: 1rem;
+    flex-wrap: wrap; /* Permite que el contenido se ajuste en pantallas pequeñas */
+    justify-content: center;
+    padding: var(--padding-general);
     text-align: left;
+    gap: 20px; /* Añade espacio entre la información y la imagen */
 }
 
-.Main .About-me .Info-me .Form-button{
-    margin-top: 5em;
-    
+.info-me {
+    flex: 1; /* Hace que el contenido sea flexible y se ajuste automáticamente */
+    padding: 2.5rem;
+    background: #212227;
+    border-radius: 40px;
+    box-shadow: inset 5px 5px 0px #5a5a5a, inset -5px -5px 0px var(--color-secundario);
+    display: flex;
+    flex-direction: row; /* Asegura que los elementos dentro se dispongan en columna */
 }
 
-.Form-button{
-    text-align: center;
+.info-me article {
+    flex-grow: 1; /* Permite que el artículo crezca si hay espacio disponible */
+}
+
+.info-me p {
+    width: 100%;
+}
+
+.button {
+    height: 50px;
+    width: 200px;
+    position: relative;
+    background-color: var(--color-terciario);
+    cursor: pointer;
+    border: 2px solid #252525;
+    overflow: hidden;
+    border-radius: 30px;
+    color: #333;
+    transition: all 0.2s ease-in-out;
+    display: inline-flex; /* Hace que el botón se ajuste a su contenido */
+    align-items: center; /* Centra el texto verticalmente */
+    justify-content: center; /* Centra el texto horizontalmente */
+    text-decoration: none; /* Elimina el subrayado del enlace */
+}
+
+.btn-txt {
+    color: var(--button_outline_color);
+    z-index: 1;
+    font-weight: 800;
+    letter-spacing: 4px;
+}
+
+.button:hover {
+    color: var(--color-fondo);
+    background-color: var(--color-secundario);
+}
+
+
+/* .image-container {
+    max-width: 100%; /* Asegura que el contenedor no se desborde 
+    height: auto;    /* Permite que la altura del contenedor se ajuste automáticamente 
+    overflow: hidden; /* Oculta cualquier contenido que sobresalga del contenedor 
     display: flex;
     justify-content: center;
 }
 
-.Form-button input{
-    margin-top: 1rem;
-    border-radius: 10px;
-}
-
-.Main .About-me .Selfie-me {
-    width: 40%;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.Main .About-me .Selfie-me h2 {
-    margin-bottom: 0;
-}
-
-.Main .About-me .Selfie-me img {
-    width: 400px;
-}
+.image-container img {
+    width: 100%;    /* Hace que la imagen ocupe todo el ancho del contenedor 
+    height: auto;   /* Mantiene la proporción de la imagen 
+    display: block; /* Evita espacios en blanco debajo de la imagen 
+} */
 
 /* <-- Proyectos --> */
 
 .Proyects{
     display: flex;
     flex-direction: column;
-}
-
-.Proyects h2 {
-    margin-top: 135px;
+    padding: var(--padding-general);
 }
 
 .Proyect {
+    padding: 1rem;
     display: flex;
-    padding: 3.5em;
-    margin: 5rem;
-    border-radius: 20px;
-    background: #1F2426;
-    box-shadow: inset 5px 5px 0px #0c0e0f, inset -5px -5px 0px #323a3d;
+    flex-direction: column;
+    background: #212227;
+    border-radius: 40px;
+    box-shadow: inset 5px 5px 0px #5a5a5a, inset -5px -5px 0px var(--color-secundario);
 }
 
-.Proyect .Img-proyect {
-    padding: 1rem;
-    width: 100%;
-    text-align: center;
+.proyect-container {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 1rem;
 }
 
-.Proyect .Img-proyect .Align-img{
-    border-radius: 20px;
-    border: 2px solid #7E6B8F;
-    overflow: hidden;
+.img-proyect{
+    width: 100%;
+    height: auto;
 }
 
-.Proyect .Img-proyect .Align-img:hover{
-    border: 2px solid var(--color-secundario);
-}
-
-.Proyect .Img-proyect img {
-    max-width: 100%;
-    height: auto; /* Esto asegura que la altura se ajuste proporcionalmente al ancho */
-    cursor: url(../Cursor/Select\ Cursor.png), auto;
-    transition: .3s ease-in-out;
-}
-
-.Proyect .Img-proyect img:hover{
-    transform: scale(1.01);
-    filter: grayscale(50%) blur(1px);
+.img-proyect img {
+    width: 100%;
+    height: auto;
 }
 
 .Proyect .Info-proyect {
-    margin: 1.5rem;
-    padding: 1.5rem 2rem 1rem 2rem;
+    padding: 1rem;
     text-align: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-
+    width: 100%;
+    height: auto;
 }
 
-.Icons-Project {
-    margin-top: 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
+.Info-proyect h3{
+    margin: 1rem;
 }
 
-.Icons-Project .Proyect-icon .Project-icon-a {
-    width: 100%;
-    margin-top: 1em;
-    padding: 0em 2em 0em 0em;
+.Info-proyect p{
+    margin: 1rem;
 }
 
 /* <!-- Contact --> */
 
 .Contact{
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    justify-content: center;
     padding: 3.5em;
 }
 
-.Contact .Form{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-
-}
-
-.Contact .Form .Form-container{
-    text-align: center;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    border-radius: 20px;
-    background: linear-gradient(145deg, #1e1f23, #23242a);
-    box-shadow:  5px 5px 2px #0d0e10,-5px -5px 2px #35363e;
-}
-
-.Contact .Form .Form-container .Form-input{
-    margin: 1rem;
-    padding: 1.5rem 0 1.5rem 1em;
-    border-radius: 20px;
-    border: 2px;
-    border-color: var(--color-fondo);
-    background: #212227;
-    box-shadow: inset -5px 5px 10px #1a1b1f,
-                inset 5px -5px 10px #28292f;
-    color: var(--color-texto);
-}
-
-::placeholder {
-    color: var(--color-texto); /* Cambia el color del marcador de posición a rojo */
-}
-
-.Contact .Form .Form-container .Form-input-message{
-    height: 15vh;
-    justify-content: center;
-}
 
 /* <-- Footer --> */
 

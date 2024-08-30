@@ -8,48 +8,36 @@
     <meta name="author" content="Jeudy Robles Padilla">
     <title>Roblesdev - Personal Portfolio</title>
     <link href="https://api.fontshare.com/v2/css?f[]=archivo@300,100&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="./assets/img/Favicon.ico" type="image/x-icon">
     <!-- Style.css -->
     <link rel="stylesheet" href="css/style.css">
     <!-- Responsive.css -->
     <link rel="stylesheet" href="css/responsive.css">
     <!-- Reset.css -->
      <link rel="stylesheet" href="css/reset.css">
+     <!-- ScrollReveal -->
+     <script src="https://unpkg.com/scrollreveal@4"></script>
 </head>
 <body>
     <!-- Header Nav --> 
     <header class="Header">
-
-        <div class="Header-Logo">
-            <a href="#Banner"><img src="img/icons/Logo Rojo.svg" alt="Logo de Roblesdev" width="50px"></a>
-        </div>
     
-        <button class="Header-button">
-            <svg class="Header-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
-            </svg>
-        </button>
-    
-        <nav class="Header-nav isActive">
-            <ul class="Header-ul">
-                <li class="Header-li"><a href="#Banner" class="Header-a">Home</a></li>
-                <li class="Header-li"><a href="#About-me" class="Header-a">About Me</a></li>
-                <li class="Header-li"><a href="#My-works" class="Header-a">Proyects</a></li>
-                <li class="Header-li"><a href="#Contact" class="Header-a">Contact</a></li>
-            </ul>
+        <nav class="Header-nav">
+            <div class="Header-Logo">
+                <a href="#Banner"><img src="img/icons/Logo Rojo.svg" alt="Logo de Roblesdev" width="50px"></a>
+            </div>
             <ul class="Header-social">
                 <li class="Header-li">
-                    <a href="https://github.com/JeudyRobles" class="Header-a" target="_blank">
+                    <a href="https://github.com/JeudyRobles" class="Header-a" target="_blank" aria-label="Link directo a Github" rel="noopener noreferrer">
                         <box-icon name='github' type='logo' animation='tada' color="#E6FAFC"></box-icon>
                     </a>
                 </li>
                 <li class="Header-li">
-                    <a href="mailto:jeudyjr@outlook.com" class="Header-a">
+                    <a href="mailto:jeudyjr@outlook.com" class="Header-a" aria-label="Link directo al correo electronico" rel="noopener noreferrer">
                         <box-icon name='gmail' type='logo' animation='flashing-hover' color="#E6FAFC"></box-icon>
                     </a>
                 </li>
                 <li class="Header-li">
-                    <a href="https://www.linkedin.com/in/jeudyrobles" class="Header-a" target="_blank">
+                    <a href="https://www.linkedin.com/in/jeudyrobles" class="Header-a" target="_blank" aria-label="Link directo a linkedIn" rel="noopener noreferrer">
                         <box-icon name='linkedin' type='logo' animation='burst-hover' color="#E6FAFC"></box-icon>
                     </a>
                 </li>
@@ -59,12 +47,6 @@
     </header>
 
     <!-- Banner -->
-
-    <div class="Text-Banner">
-        <span>Hello, I´m Roblesdev, my real name is</span>
-        <h1>Jeudy Robles Padilla</h1>
-        <h2>Front-end Developer.</h2>
-    </div>
 
     <div class="Banner-Bg" id="Banner"id="Banner">
     
@@ -83,6 +65,12 @@
             </ul>
         </div >
 
+        <div class="Text-Banner">
+            <span>Hello, I´m Roblesdev, my real name is</span>
+            <h1>Jeudy Robles Padilla</h1>
+            <h2>Front-end Developer.</h2>
+        </div>
+
     </div>
     <!-- Main -->
     <div class="bg"></div>
@@ -99,128 +87,84 @@
         </section>
         <!-- About me -->
         <h2  id="About-me"><span class="dash">| </span> About me.</h2>
-        <div class="About-me">
-            <div class="Info-me">
-                <h2>Hello World 👋</h2>
-                <p>"Hello! I’m Jeudy Robles ✌, a passionate web developer. Since childhood, I’ve had a strong affinity for computers. I began my journey using Scratch as a kid, and it wasn’t until 2022 that I delved into the exciting realm of programming and web page development. Today, I have the privilege of doing what I love. 💻 🫰</p>
-                <p>When I’m not coding, I enjoy playing videogames 👾 and listen music. 🎧 I’m most likely playing futbol ⚽ or watching a anime 🎬 at the moment! Thank you for asking!"🚀</p>
-                <div class="Fomr-button">
-                    <button>
-                        <a href="docs/Jeudy_Robles_CV.pdf" download="Jeudy-Robles-Padilla.pdf"><span class="button_top">CV</span></a>
-                    </button>
-                </div>
-            </div>
-            <div class="Selfie-me">
-                <img src="img/Jeudy Robles Foto.png" alt="">
-                <h2>Jeudy Robles</h2>
-            </div>
-        </div>
-        <!-- Proyects -->
-        <div class="Proyects">
+        <section class="about-me">
+            <div class="info-me">
+                <article>
+                    <h2>Hello World 👋</h2>
+                    <p>Hello! I’m Jeudy Robles ✌, a passionate web developer. Since childhood, I’ve had a strong affinity for computers. I began my journey using Scratch as a kid, and it wasn’t until 2022 that I delved into the exciting realm of programming and web page development. Today, I have the privilege of doing what I love. 💻 When I’m not coding, I enjoy playing videogames 👾 and listening to music 🎧. I’m most likely playing fútbol ⚽ or watching anime 🎬 at the moment! Thank you for asking! 🚀</p>
+                    <p></p>
+                    <p>I specialize in creating dynamic and responsive web applications using the latest technologies. My projects range from simple landing pages to complex web applications, each designed with a focus on user experience and performance. I thrive on solving challenging problems and continuously learning new skills to stay ahead in the ever-evolving tech landscape.
 
-            <h2 id="My-works"><span class="dash">| </span> My Works.</h2>
-                <!-- Proyect 1 -->
-            <div class="Proyect">
-                <div class="Img-proyect">
-                    <div class="Align-img"> <!-- Alinea la imagen de adentro, sin alterar la misma -->
-                        <a href="http://congresoaguacateina2023.infinityfreeapp.com/?i=1" target="_blank">
-                            <img src="img/Congreso Aguacate.png" alt="">
-                        </a>
-                    </div>
-                </div>
-                <div class="Info-proyect">
-                    <h3>Congreso Nacional De Cultivo De Aguacate 2023</h3>
-                    <p>Website for the Congreso Nacional De Cultivo De Aguacate 2023, designed and created by the Instituto Nacional INA Los Santos 2023 Web Development Group. <a href="http://congresoaguacateina2023.infinityfreeapp.com/?i=1" target="_blank">View website.</a>↗️</p>
-                    <ul class="Icons-Project">
-                        <li class="Proyect-icon">
-                            <a  class="Project-icon-a" title="HTML5">
-                                <box-icon type='logo' name='html5' animation='burst-hover' color="#7E6B8F" size='lg'></box-icon>
-                            </a>
-                        </li>
-                        <li class="Proyect-icon">
-                            <a  class="Project-icon-a" title="CSS3">
-                                <box-icon name='css3' type='logo' color="#7E6B8F" size='lg' animation='burst-hover'></box-icon>
-                            </a>
-                        </li>
-                        <li class="Proyect-icon">
-                            <a  class="Project-icon-a" title="JavaScript">
-                                <box-icon name='javascript' type='logo' color="#7E6B8F" size='lg' animation='burst-hover'></box-icon>
-                            </a>
-                        </li>
-                        <li class="Proyect-icon">
-                            <a  class="Project-icon-a" title="Bootstrap">
-                                <box-icon name='bootstrap' type='logo' color="#7E6B8F" size='lg' animation='burst-hover'></box-icon>
-                            </a>
-                        </li>
-                        <li class="Proyect-icon">
-                            <a  class="Project-icon-a" title="PHP">
-                                <box-icon type='logo' name='php' color="#7E6B8F" size='lg' animation='burst-hover'></box-icon>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                    In addition to my technical skills, I value collaboration and communication. Working with diverse teams has taught me the importance of empathy and adaptability, which I bring to every project. Whether it’s brainstorming new ideas or debugging code, I approach each task with enthusiasm and a commitment to excellence.</p>
+                    <!--  /* From Uiverse.io by Gaurav-WebDev */  -->
+                    <a class="button" href="docs/Jeudy_Robles_CV.pdf" download="Jeudy-Robles-Padilla.pdf">
+                        <span class="btn-txt">Download CV</span>
+                    </a>                    
+                </article>
+                <!-- <article class="image-container">
+                    <img src="img/Yomotorizado-removebg.png" alt="Descripción de la imagen">
+                </article> -->
             </div>
-            <!-- Proyect 2 -->
+        </section>
+        
+        <!-- Proyects -->
+        <h2 id="My-works"><span class="dash">| </span> My Works.</h2>
+        <div class="Proyects">
             <div class="Proyect">
-                <div class="Img-proyect">
-                    <div class="Align-img"> <!-- Alinea la imagen de adentro, sin alterar la misma -->
-                        <a href="https://docafetarrazu.com/" target="_blank">
-                            <img src="img/DOCT.png" alt="">
-                        </a>
+                <!-- Proyect 1 -->
+                <div class="proyect-container">
+                    <div class="img-proyect">
+                        <img src="img/Congreso Aguacate.png" alt="Congreso Nacional De Cultivo De Aguacate 2023">
+                    </div>
+                    <div class="Info-proyect">
+                        <h3>Congreso Nacional De Cultivo De Aguacate 2023</h3>
+                        <p>Website for the Congreso Nacional De Cultivo De Aguacate 2023, designed and created by the Instituto Nacional INA Los Santos 2023 Web Development Group. <a href="http://congresoaguacateina2023.infinityfreeapp.com/?i=1" target="_blank">View website.</a>↗️</p>
+                    </div>
+                </div>                
+                <br>
+                <hr class="styled-hr">            
+                <br>
+                <!-- Proyect 2 -->
+                <div class="proyect-container proyect-container-sr">
+                    <div class="img-proyect">
+                        <div class="img-proyect">
+                            <img src="img/DOCT.png" alt="Congreso Nacional De Cultivo De Aguacate 2023">
+                        </div>
+                    </div>
+                    <div class="Info-proyect">
+                        <h3>Denominación De Origen Café Tarrazu</h3>
+                        <p>Website for Denominación De Origen Café Tarrazu, designed and created by the Instituto Nacional INA Los Santos 2023 Web Development Group. <a href="https://docafetarrazu.com/" target="_blank">View website.</a>↗️ </p>
                     </div>
                 </div>
-                <div class="Info-proyect">
-                    <h3>Denominación De Origen Café Tarrazu</h3>
-                    <p>Website for Denominación De Origen Café Tarrazu, designed and created by the Instituto Nacional INA Los Santos 2023 Web Development Group. <a href="https://docafetarrazu.com/" target="_blank">View website.</a>↗️ </p>
-                    <ul class="Icons-Project">
-                        <li class="Proyect-icon">
-                            <a  class="Project-icon-a" title="HTML5">
-                                <box-icon type='logo' name='html5' color="#7E6B8F" size='lg' animation='burst-hover'></box-icon>
-                            </a>
-                        </li>
-                        <li class="Proyect-icon">
-                            <a  class="Project-icon-a" title="CSS3">
-                                <box-icon name='css3' type='logo' color="#7E6B8F" size='lg' animation='burst-hover'></box-icon>
-                            </a>
-                        </li>
-                        <li class="Proyect-icon">
-                            <a  class="Project-icon-a" title="JavaScript">
-                                <box-icon name='javascript' type='logo' color="#7E6B8F" size='lg' animation='burst-hover'></box-icon>
-                            </a>
-                        </li>
-                        <li class="Proyect-icon">
-                            <a  class="Project-icon-a" title="Bootstrap">
-                                <box-icon name='bootstrap' type='logo' color="#7E6B8F" size='lg' animation='burst-hover'></box-icon>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                
             </div>
         </div>
         <!-- Contact -->
         <div class="Contact">
-            <div id="Contact" class="Form">
+            <div>
+                <h2 class="work-together"> <span class="dash">| </span>Let's work together.</h2>
                 <div class="Container-gif">
-                    <h2 class="Form-h2"> <span class="dash">| </span>Let's work together.</h2>
-                    <img src="img/cat.gif" id="image-cat" onclick="cambiarGIF()" />
+                    <img src="img/cat.gif"/>
                 </div>
 
-                <form id="form">
-
-                    <div class="Form-container">
-                        <h3 class="Form-h2">Send a message and say Hi! 👋</h3>
-                        <input type="text" name="from_name" id="from_name" class="Form-input Form-input-name" placeholder="Name">
-                        <input type="text" name="email_id" id="email_id"  class="Form-input Form-input-email" placeholder="Email">
-                        <input type="text" name="message" id="message" class="Form-input Form-input-message"placeholder="Message">
-                        
-                        <div class="Form-button">
-                            <input type="submit" id="button" value="Send Email" class="button_top">
-                        </div>
-                    </div>
-                </form>
-
+                <a class="button" href="mailto:jeudyjr@outlook.com">
+                    <span class="btn-txt">
+                        <box-icon name='gmail' type='logo' animation='tada' color="#1F2426"></box-icon>
+                    </span>
+                </a>  
+                <a class="button" href="https://github.com/JeudyRobles">
+                    <span class="btn-txt">
+                        <box-icon name='github' type='logo' animation='tada' color="#1F2426"></box-icon>
+                    </span>
+                </a>  
+                <a class="button" href="https://www.linkedin.com/in/jeudyrobles">
+                    <span class="btn-txt">
+                        <box-icon name='linkedin' type='logo' animation='tada' color="#1F2426"></box-icon>
+                    </span>
+                </a>  
             </div>
         </div>
+        
     </main>
     <!-- Footer -->
     <footer class="Footer">
@@ -236,13 +180,5 @@
     <script src="js/main.js"></script>
     <!-- Script Boxicon -->
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-    <!-- Script Animate js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-    <!-- Script Emailjs -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script type="text/javascript">
-        emailjs.init('0uh6qFNSsQ0D7Krx2')
-    </script>
 </body>
 </html>

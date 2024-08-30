@@ -14,13 +14,9 @@
         font-size: 32px;
         margin-bottom: 40px;
     }
-
-    .Main .About-me .Selfie-me img {
-        width: 330px;
-    }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1260px) {
     .Text-Banner h1 {
         font-size: 90px;
     }
@@ -40,6 +36,9 @@
 }
 
 @media screen and (max-width: 991px) {
+    .bg{
+        display: none;
+    }
     .Main .About-me {
         flex-wrap: wrap;
         justify-content: center;
@@ -61,31 +60,12 @@
         margin-bottom: 40px;
     }
 
-    .Main .About-me .Selfie-me {
-        order: 1;
-    }
-
-    .Main .About-me .Selfie-me h2 {
-        margin-bottom: 40px;
-    }
-
-    .Main .About-me .Selfie-me img {
-        width: 330px;
-    }
-
-    .Proyect {
-        flex-wrap: wrap;
-    }
-
-    .Contact .Form{
-        flex-wrap: wrap;
+    .proyect-container{
+        flex-direction: column;
     }
 
     .Main h2{
         margin-bottom: 0;
-    }
-    .Contact .Form .Form-container{
-        width: 100%;
     }
 }
 
@@ -93,31 +73,6 @@
     h3{
         font-size: 28px;
         margin-bottom: 0.5rem;
-    }
-    .Header-nav {
-        width: 100%;
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: center;
-        align-items: center;
-        transition: all 0.5s ease;
-        height: 0vh;
-        overflow: hidden;
-        pointer-events: none;
-    }
-
-    .Header-nav.isActive {
-        height: 20vh;
-        pointer-events: auto;
-    }
-
-    .Header-social .Header-li .Header-a {
-        margin-top: 1em;
-        padding: 1em;
-    }
-
-    .Header-button {
-        display: block;
     }
 
     .Text-Banner span {
@@ -129,17 +84,15 @@
         padding: 1em;
         justify-content: center;
     }
-
-    .Header-li {
-        margin: 0.5em 0;
-    }
     
     .Footer p:hover{
         pointer-events: none;
     }
-}
 
-@media screen and (max-width: 668px) {
+    .Text-Banner{
+        padding: 1.5rem;
+    }
+
     .Text-Banner h1 {
         font-size: 60px;
     }
@@ -155,97 +108,75 @@
     .Container-gif #image-cat{
         width: 250px;
     }
-    .Contact .Form .Form-container .Form-input{
-        padding: 1em;
-        margin: 0.5em;
-    }
 }
 
 @media screen and (max-width: 600px) {
+    h2{
+        font-size: 28px!important;
+    }
+
+    h3{
+        font-size: 16px;
+    }
+    p{
+        font-size: 14px!important;
+    }
+    .Header-nav{
+        width: 100%;
+    }
     .Main h2 {
         margin-bottom: 1.5rem;
     }
 
-    .Main .About-me .Info-me {
-        padding: 2rem;
+    .about-me{
+        padding: 1rem;
     }
 
-    .Main .About-me .Selfie-me {
+    .info-me {
+        padding: 2rem;
+        border-radius: 20px;
+    }
+
+    .info-me p {
+        padding: 0.2rem;
+        margin: 0;
+    }
+
+    .button{
+        margin-top: 1rem;
+    }
+
+    .Proyects{
+        padding: 1rem;
+    }
+
+    .Proyect{
+        margin: 0;
+        border-radius: 20px;
+    }
+
+    .Container-gif img{
         width: 100%;
-    }
+        height: auto;
 
-    .Main .About-me .Info-me p {
-        padding: 1rem;
-        font-size: 16px;
-        margin: 0;
-    }
-}
-
-@media screen and (max-width: 590px) {
-    .Header{
-        margin: 1rem;
-    }
-    .Proyect .Info-proyect {
-        margin: 0;
-        margin-top: 1.5rem;
-        padding: 1rem;
-    }
-    .Icons-Project .Proyect-icon .Project-icon-a{
-        padding: 0;
-    }
-}
-
-@media screen and (max-width: 458px) {
-    p {
-        font-size: 16px;
-    }
-    .Contact{
-        padding: 2rem;
-    }
-    .Contact .Form .Form-container{
-        padding: 0;
     }
 }
 
 @media screen and (max-width: 400px) {
-    .Header{
-        margin: 0;
-        margin-top: 1rem;
-        padding: 1.5rem;
-    }
-    .Header a{
-        padding: 0rem;
-        font-size: 14px;
-    }
-    .Header-ul{
-        padding: 0;
-        display: flex;
-        justify-content: space-around;
-    }
-    .Main h2 {
-        font-size: 38px;
+    .Text-Banner{
+        padding: 0.5rem;
     }
 
-    .Main .About-me .Info-me h2 {
-        margin-bottom: 15px;
-    }
-
-    .Main .About-me {
-        padding: 10px;
-    }
-
-    .Main .About-me .Selfie-me img {
-        width: 190px;
-    }
-
-    .Proyect {
-        margin: 1rem;
+    .about-me{
         padding: 0;
     }
-    .Contact .Form .Form-container{
-        padding: 0.1em;
+
+    .info-me{
+        padding: 0.8rem;
     }
-    .Contact{
-        padding: 1rem;
+
+    .Proyects{
+        padding: 0;
     }
 }
+
