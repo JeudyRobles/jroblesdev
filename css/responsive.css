@@ -119,6 +119,10 @@
         width: 10%;
         justify-content: center;
         align-items: center;
+        border-radius: 15px;
+    }
+    .Header-nav img{
+        width: 25px;
     }
     .Main h2 {
         margin-bottom: 1.5rem;
