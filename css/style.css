@@ -589,6 +589,10 @@ button:active .button_top {
     margin: 1rem;
 }
 
+.Info-proyect a{
+    cursor: pointer;
+}
+
 /* <!-- Contact --> */
 
 .Contact{
